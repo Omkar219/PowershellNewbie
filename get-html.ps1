@@ -51,4 +51,4 @@ function get-htmlfile{
 }
 
 
-get-htmlfile -url "www.google.com" -output "C:\temp\google.html"
+#get-htmlfile -url "www.google.com" -output "C:\temp\google.html"
