@@ -81,3 +81,207 @@ git push
 git push -u <remote name , origin , branch name> should be given ! 
 you may need to git clone 
 
+########## git branches and tags ###################
+Git branches and tags often play a role in CI/CD automation. You will need a basic understanding
+ of these concepts in order to proceed with later steps of implementing a CI/CD Pipeline. 
+This lesson provides a brief introduction to git branches and tags. After completing it, 
+you should have a basic understanding of what tags and branches are in git.
+
+Branches us branches as part of the daily workflow 
+
+CI|CD pipeline. 
+
+>> git checkout  an existing branch 
+>> git checkout <branch>
+>> git checkout -b <newbranch> files
+
+git tags - commit id with long randomized string with tags 
+
+git branch 
+git status
+git checkout -b newbranch
+git branch
+git checkout master 
+
+git tag myTag - current latest commit gets name as myTag 
+git tag 
+################### GIt pull reqeuests ########################################
+
+pull request , merged togther,
+
+a pull request to delayed merger takes time and permission and review the changes 
+ ######################################## 
+
+ Build automation --- 
+
+ - compiling
+ - dependency management 
+ - Executing automated tests
+ - Packaging the app 
+
+ --- Gradle automation tool , gradle build automation for 
+Before you can begin using Gradle to create build automation, you need to be able to install it. This lesson will walk you through the process of installing Gradle. It will also introduce you to a slightly more advanced way of installing and using Gradle, known as the Gradle Wrapper. After completing this lesson, you should be able to install Gradle and the Gradle Wrapper so that you can execute Gradle builds.
+
+You can find more information about installing Gradle at https://gradle.org/install/
+Here are the commands used in the demo to install gradle:
+
+cd ~/
+wget -O ~/gradle-4.7-bin.zip https://services.gradle.org/distributions/gradle-4.7-bin.zip
+sudo yum -y install unzip java-1.8.0-openjdk
+sudo mkdir /opt/gradle
+sudo unzip -d /opt/gradle/ ~/gradle-4.7-bin.zip
+sudo vi /etc/profile.d/gradle.sh
+Put this text into gradle.sh:
+
+export PATH=$PATH:/opt/gradle/gradle-4.7/bin
+Then set permissions on gradle.sh:
+
+sudo chmod 755 /etc/profile.d/gradle.sh
+Finally, after logging out of the server and logging back in:
+
+gradle --version
+And the commands used to install and run the Gradle Wrapper:
+
+cd ~/
+mkdir my-project
+cd my-project
+gradle wrapper
+./gradlew build
+
+Gradle wrapper - is just a script that invokes a declared version of gradle, downloading it.
+beforehand if necessary 
+
+gradle wrapper allows grade to install itself using just the fiels from your projects source control.
+
+installing the gradle wrapper
+cd /ur/project/root/directory
+gradle wrapper 
+
+add the line .gradle to ur .gitignore file.
+
+This will place a script file in your porjects root directory called gradlew
+gradlew.bat for windows systems.
+
+cd /ur/project/root/directory
+./gradlew build 
+
+
+Gradle is a powerful build automation tool, but in order to use it you need to know the basics of how it works. This lesson will guide you through the core concepts of Gradle automation, and it will demonstrate creating a simple build.gradle file. After completing this lesson, you should have a basic working knowledge of how to implement and execute tasks in Gradle.
+
+More more information on Gradle, check out the official Gradle site: https://gradle.org
+
+
+Here is the final build.gradle from the demo:
+
+plugins {
+  id 'com.moowork.node' version '1.2.0'
+}
+
+task sayHello  {
+  doLast {
+    println 'Hello, World!'
+  }
+}
+
+task anotherTask  {
+  doLast {
+    println 'This is another task'
+  }
+}
+If you have the gradle wrapper installed in your project (for example, by using gradle init), you can run the build defined in this build.gradle like so:
+
+./gradlew sayHello
+
+
+grovy script called build.gradle.
+
+gradlew sometask someothertask
+
+this commad will run a task named someTASK and someothertask
+
+definig tasks 
+build.gradle file controls what tasks are available for your project.
+
+build.gradle. 
+
+task dependency one task dependency one and another,
+later task dependency ---
+always run before the task 
+
+we could define the build.gradle
+plugins - huge plugins
+pre-built tasks and gradle plugins
+plugins{
+
+    id pluginid version plugin version 
+
+}
+
+
+mkdir my-piorject
+gradle init 
+ls -la 
+./gradlew build 
+
+
+vi build.gradle
+tasks sayhello <<{
+println "hello,world"
+
+}
+tasks sayhelloone << {
+
+    println "Hello world"
+}
+
+
+vi build.gradle 
+
+./gradlew sayhello
+
+------
+plugins {
+
+    id 'com.moowork.node' version '1.2.0'
+
+}
+
+task sayHello << {
+
+ printlnt "hello, world"
+
+}
+
+task anotherTASK << {
+
+    println "This is another task"
+}
+
+sayhello.dependsOn anotherTASK 
+
+
+########## automataed testing ##################3
+
+code autoated execution of tests that verify quality and stabilty of code 
+
+biiold proces
+
+unit tests , integration tests , smoke tests and sanity tests 
+taskbuild 
+task test 
+build.dependsONtest
+
+Automated testing is a very important component of a CI/CD Pipeline, and it is often performed using build automation. This lesson introduces the concept of automated testing and covers a few different types of automated tests. It also discusses the basics of executing automated tests in Gradle and demonstrates what that can look like. 
+After completing this lesson, you will have a foundational understanding of automated tests that will allow you to incorporate them into the CI/CD Pipeline.
+
+
+The sample project used in the demo for the lesson can be found on the example-solution branch of this GitHub repo: https://github.com/linuxacademy/cicd-pipeline-train-schedule-gradle
+
+./gradlew npm_test 
+
+task :npm_test 
+
+
+
+
+

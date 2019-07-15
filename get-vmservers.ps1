@@ -19,3 +19,5 @@ $vmserver = Read-Host "Enter the VM you wanna get the details of"
 $networkdetails = Get-NetworkAdapter $vmserver -ErrorAction SilentlyContinue | select-object -expand type,macaddress
 
 
+Disconnect-VIServer -server "taspukvca101.cernuk.com"
+
