@@ -1,0 +1,83 @@
+### git hub commands to use ###
+## cloning
+adding
+committing
+pushing
+branching - separate branch to work with
+merging 
+pull requests - pull requests implemented on github
+
+installing scm sall code canges made by devs will need to be tracked in scm
+devs will user scm to  track their hanges
+
+SCM + CI 
+
+CI will get the code from scm
+scm will notify with CI server when code needs to be built 
+
+Before you can begin using git, you need to install and configure it. This lesson will walk you through everything that needs to be done in order to install and configure git, and it will also demonstrate each step.
+
+After completing this lesson, you should be able to install and configure git so that it can authenticate with GitHub.com.
+
+You can find additional documentation on these topics in the following locations:
+Git installation instructions: https://git-scm.com/downloads . 
+
+GitHub ssh authentication setup documentation:
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
+## 
+
+git config -username
+git config -email 
+
+ssh key for git 
+
+ssh-keygen -t rsa -b 4096
+
+copy the content of ~/.ssh/id_rsa.pub 
+ssh gpg keys to git hub 
+
+>> ssh-key -t rsa -b 4096
+
+
+################ 
+
+Forks are a useful tool for working with GitHub projects. Forks provide a way for any user to 
+create their own personal copy of a GitHub repository which they can fully control without interfering with other users. 
+They are widely used in managing open source projects, and they will be used frequently in this course. In this lesson, you will learn how to create a fork of a GitHub repository.
+
+If you want to follow along, the repository used to 
+create a fork in this lesson's demonstration can be found here: https://github.com/linuxacademy/cicd-pipeline-train-schedule-git
+
+###############
+
+making changes in 
+
+git clone <repo url>
+
+A crucial part of using git in any CI/CD Pipeline is making code changes. In order to manage changes to source code in git, you need to know how to clone a remote repository, stage changes to source code files, commit them, and push them back to the remote repo.
+This lesson will introduce you to a few basic commands that you can use to do this, and it will provide you with a demonstration of their usage. After completing this lesson, you should be able to make changes to source code controlled in git, commit them, and push them to GitHub.
+If you want to follow along, you can make a personal fork of the source code repo at https://github.com/linuxacademy/cicd-pipeline-train-schedule-git. Just go to that repo in GitHub and click "fork." Then, when you clone the repo, clone your personal fork with following command (replace with your actual github username):
+git clone git@github.com:/cicd-pipeline-train-schedule-git.git
+##################
+
+git init 
+
+will initiate the value of the code repo 
+
+add command stages changed files for the next commit 
+
+git add <file>
+
+git status to ; 
+
+git commit -m "Message describing the change"
+
+git add , commit the changes that were staged.
+
+git push 
+
+git push -u <remote name , origin , branch name> should be given ! 
+you may need to git clone 
+
