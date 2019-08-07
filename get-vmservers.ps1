@@ -13,7 +13,7 @@
 ## adding addsnapin vmware.
 asnp vmware* -ErrorAction SilentlyContinue
 
-Connect-VIServer -server "taspukvca101.cernuk.com" -User "cernuk\ob051251" -Password "Jacob@2025"
+Connect-VIServer -server "" -User "" -Password ""
 $vmserver = Read-Host "Enter the VM you wanna get the details of" 
 
 $networkdetails = Get-NetworkAdapter $vmserver -ErrorAction SilentlyContinue | select-object -expand type,macaddress
